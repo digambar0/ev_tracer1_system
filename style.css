@@ -1,0 +1,347 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+/* Main body content */
+body {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Main content section */
+.main-content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10px; 
+  width: 100%;
+}
+
+/* Background and thunderbolt effects */
+.background,
+.thunderbolt {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.background {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2), rgba(0, 0, 0, 0.8));
+  animation: waveBackground 5s ease-in-out infinite;
+}
+
+.thunderbolt {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbf1yKH6neB6wtwkuGLxz524SKX7lKQMygdkqEneLEloDARC9BSV-fa1mM_oOF7wNg9jc&usqp=CAU') no-repeat center center;
+  background-size: cover;
+  opacity: 0.1;
+  animation: thunderboltEffect 3s infinite;
+  z-index: -1;
+}
+
+@keyframes thunderboltEffect {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes waveBackground {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Form container */
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  margin-bottom: 30px;
+  color: #fff;
+  margin-top: 30px; /* Add this line to create space above the container */
+}
+
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+/* Toggle buttons */
+.toggle-links {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.toggle-links button {
+  background: transparent;
+  border: none;
+  color: #00ffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-bottom: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.toggle-links button:hover {
+  border-bottom: 2px solid #00ffff;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #aef;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.form-group input:focus {
+  background-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Electric button */
+.electric-btn {
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  background: linear-gradient(90deg, #00ffff, #00ffcc);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.electric-btn:hover {
+  background: linear-gradient(90deg, #00ccff, #00ffff);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Forgot and signup links */
+.forgot {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot a {
+  color: #66ffff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Vehicle and dealer selectors */
+.vehicle-selector, .dealer-selector {
+  background-color: #ffffff10;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.radio-container {
+  display: block;
+  margin: 15px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.radio-container input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.radio-label {
+  vertical-align: middle;
+}
+
+.dealer-selector select {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #13b6f7;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.dealer-selector button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ffff, #00ffcc);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dealer-selector button:hover {
+  background: linear-gradient(90deg, #00ccff, #00ffff);
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Vehicle and dealer wrapper */
+.vehicle-dealer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+footer .container {
+  color: #000;
+  max-width: 500px; 
+  margin: 0 auto;
+  padding: 0 15px; 
+}
+
+/* responsiveness */
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 991px) {
+  .container {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  .vehicle-dealer-wrapper {
+    gap: 20px;
+  }
+
+  .form-group input,
+  .dealer-selector select {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 30px 10px;
+  }
+
+  .container {
+    padding: 20px 15px;
+    max-width: 95%;
+    border-radius: 15px;
+  }
+
+  .toggle-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toggle-links button {
+    font-size: 13px;
+  }
+
+  .vehicle-selector,
+  .dealer-selector {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .radio-container {
+    font-size: 16px;
+  }
+
+  .dealer-selector select {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .dealer-selector button {
+    width: 100%;
+  }
+
+  .electric-btn {
+    font-size: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* Extra small devices (less than 480px) */
+@media (max-width: 479px) {
+  .form-group input {
+    padding: 10px;
+  }
+
+  .electric-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .dealer-selector button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .forgot a {
+    font-size: 12px;
+  }
+}
+
